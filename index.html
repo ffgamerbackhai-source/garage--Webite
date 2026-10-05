@@ -1,0 +1,1955 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="UK Garage — Professional vehicle servicing, diagnostics, MOT preparation and repairs in Sheffield.">
+<title>UK Garage | Sheffield Automotive Specialists</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#070809;
+    --bg2:#0c0e10;
+    --card:#111416;
+    --card2:#15191b;
+    --text:#f5f7f8;
+    --muted:#9ba3a8;
+    --accent:#e6ff00;
+    --accent2:#b9d000;
+    --line:rgba(255,255,255,.09);
+    --shadow:0 25px 80px rgba(0,0,0,.45);
+    --radius:24px;
+    --max:1200px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter, sans-serif;
+    background:
+        radial-gradient(circle at 80% 10%,rgba(230,255,0,.07),transparent 25%),
+        radial-gradient(circle at 10% 50%,rgba(255,255,255,.035),transparent 25%),
+        var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    z-index:999;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+.container{
+    width:min(92%,var(--max));
+    margin:auto;
+}
+
+section{
+    padding:110px 0;
+    position:relative;
+}
+
+.section-head{
+    max-width:700px;
+    margin-bottom:55px;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    color:var(--accent);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:16px;
+}
+
+.eyebrow span{
+    width:30px;
+    height:2px;
+    background:var(--accent);
+    display:block;
+}
+
+h2{
+    font-family:Montserrat,sans-serif;
+    font-size:clamp(34px,5vw,58px);
+    line-height:1.02;
+    letter-spacing:-2px;
+}
+
+.section-head p{
+    color:var(--muted);
+    margin-top:20px;
+    line-height:1.8;
+}
+
+/* ================= NAVBAR ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+    padding:18px 0;
+    transition:.35s;
+}
+
+header.scrolled{
+    background:rgba(7,8,9,.88);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--line);
+    padding:12px 0;
+}
+
+.nav{
+    width:min(94%,1240px);
+    margin:auto;
+    height:66px;
+    padding:0 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    background:rgba(14,16,17,.68);
+    backdrop-filter:blur(20px);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:Montserrat,sans-serif;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.logo-mark{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    background:var(--accent);
+    color:#050606;
+    font-weight:900;
+    transform:skew(-8deg);
+    box-shadow:0 0 30px rgba(230,255,0,.18);
+}
+
+.logo small{
+    display:block;
+    color:#858d91;
+    font-family:Inter,sans-serif;
+    font-size:9px;
+    letter-spacing:2px;
+    margin-top:2px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.nav-links a{
+    padding:11px 15px;
+    border-radius:10px;
+    color:#aeb5b8;
+    font-size:13px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:var(--accent);
+    background:rgba(230,255,0,.07);
+}
+
+.nav-cta{
+    padding:12px 18px;
+    border-radius:11px;
+    background:var(--accent);
+    color:#080909;
+    font-size:13px;
+    font-weight:900;
+    transition:.3s;
+}
+
+.nav-cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 30px rgba(230,255,0,.18);
+}
+
+.menu-btn{
+    display:none;
+    width:42px;
+    height:42px;
+    border:1px solid var(--line);
+    background:transparent;
+    color:white;
+    border-radius:11px;
+    font-size:21px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:130px;
+    overflow:hidden;
+}
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(90deg,rgba(5,6,7,.98) 0%,rgba(5,6,7,.84) 42%,rgba(5,6,7,.28) 100%),
+        linear-gradient(0deg,var(--bg) 0%,transparent 40%),
+        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2200&q=85") center/cover;
+    opacity:.92;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:550px;
+    height:550px;
+    border-radius:50%;
+    border:1px solid rgba(230,255,0,.08);
+    right:-160px;
+    top:15%;
+    box-shadow:0 0 0 80px rgba(230,255,0,.015),0 0 0 160px rgba(230,255,0,.01);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:760px;
+}
+
+.hero-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    border:1px solid rgba(230,255,0,.22);
+    background:rgba(230,255,0,.06);
+    color:var(--accent);
+    border-radius:50px;
+    padding:9px 14px;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.hero-tag i{
+    width:7px;
+    height:7px;
+    background:var(--accent);
+    border-radius:50%;
+    box-shadow:0 0 14px var(--accent);
+}
+
+.hero h1{
+    font-family:Montserrat,sans-serif;
+    font-size:clamp(50px,8vw,94px);
+    line-height:.94;
+    letter-spacing:-5px;
+    text-transform:uppercase;
+}
+
+.hero h1 span{
+    color:var(--accent);
+}
+
+.type-line{
+    min-height:34px;
+    margin-top:25px;
+    color:#d2d7d9;
+    font-size:17px;
+}
+
+.cursor{
+    color:var(--accent);
+    animation:blink .7s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0}
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:1px solid var(--line);
+    padding:15px 21px;
+    border-radius:12px;
+    font-size:13px;
+    font-weight:800;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--accent);
+    color:#070808;
+    border-color:var(--accent);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(230,255,0,.18);
+}
+
+.btn-outline:hover{
+    border-color:var(--accent);
+    color:var(--accent);
+    transform:translateY(-3px);
+}
+
+.hero-trust{
+    display:flex;
+    gap:30px;
+    margin-top:60px;
+    flex-wrap:wrap;
+}
+
+.trust-item strong{
+    font-family:Montserrat,sans-serif;
+    font-size:25px;
+    display:block;
+}
+
+.trust-item span{
+    font-size:10px;
+    color:#8c9498;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+    background:linear-gradient(180deg,#090a0b,#0c0e0f);
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.service-card{
+    position:relative;
+    padding:30px;
+    min-height:280px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+    overflow:hidden;
+    transition:.4s;
+}
+
+.service-card::before{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:var(--accent);
+    filter:blur(80px);
+    opacity:0;
+    right:-70px;
+    top:-70px;
+    transition:.4s;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(230,255,0,.32);
+    box-shadow:var(--shadow);
+}
+
+.service-card:hover::before{
+    opacity:.1;
+}
+
+.service-number{
+    position:absolute;
+    top:24px;
+    right:27px;
+    color:#404649;
+    font-size:11px;
+    font-weight:800;
+}
+
+.service-icon{
+    width:54px;
+    height:54px;
+    border-radius:16px;
+    display:grid;
+    place-items:center;
+    background:rgba(230,255,0,.08);
+    color:var(--accent);
+    border:1px solid rgba(230,255,0,.15);
+    font-size:24px;
+    margin-bottom:40px;
+}
+
+.service-card h3{
+    font-family:Montserrat,sans-serif;
+    font-size:21px;
+    margin-bottom:12px;
+}
+
+.service-card p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.7;
+}
+
+.service-link{
+    display:inline-block;
+    margin-top:20px;
+    color:var(--accent);
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+/* ================= ABOUT ================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image{
+    position:relative;
+    min-height:550px;
+    border-radius:30px;
+    overflow:hidden;
+    border:1px solid var(--line);
+}
+
+.about-image img{
+    height:100%;
+    object-fit:cover;
+}
+
+.about-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(0deg,rgba(0,0,0,.75),transparent 60%);
+}
+
+.experience-card{
+    position:absolute;
+    bottom:25px;
+    left:25px;
+    right:25px;
+    z-index:2;
+    padding:20px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:18px;
+    background:rgba(7,8,9,.75);
+    backdrop-filter:blur(15px);
+}
+
+.experience-card strong{
+    font-family:Montserrat;
+    font-size:35px;
+    color:var(--accent);
+}
+
+.experience-card p{
+    color:#adb4b7;
+    font-size:12px;
+    margin-top:4px;
+}
+
+.about-copy p{
+    color:var(--muted);
+    line-height:1.85;
+    margin-top:22px;
+    font-size:14px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-top:30px;
+}
+
+.feature{
+    padding:17px;
+    border:1px solid var(--line);
+    border-radius:13px;
+    background:rgba(255,255,255,.025);
+}
+
+.feature b{
+    color:var(--accent);
+    margin-right:7px;
+}
+
+.feature span{
+    font-size:12px;
+    color:#c6cccf;
+}
+
+/* ================= STATS ================= */
+
+.stats{
+    padding:45px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:#090b0c;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.stat{
+    text-align:center;
+    border-right:1px solid var(--line);
+}
+
+.stat:last-child{
+    border:0;
+}
+
+.stat strong{
+    font-family:Montserrat;
+    font-size:38px;
+    color:var(--accent);
+}
+
+.stat p{
+    margin-top:5px;
+    color:#80898d;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+/* ================= PROCESS ================= */
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.process{
+    padding:27px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    position:relative;
+    background:rgba(255,255,255,.02);
+}
+
+.process-num{
+    color:var(--accent);
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.process h3{
+    margin:30px 0 10px;
+    font-family:Montserrat;
+    font-size:18px;
+}
+
+.process p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.7;
+}
+
+/* ================= VEHICLES ================= */
+
+.vehicle-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.vehicle-card{
+    border:1px solid var(--line);
+    border-radius:23px;
+    overflow:hidden;
+    background:var(--card);
+    transition:.4s;
+}
+
+.vehicle-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(230,255,0,.25);
+}
+
+.vehicle-img{
+    height:240px;
+    overflow:hidden;
+}
+
+.vehicle-img img{
+    height:100%;
+    object-fit:cover;
+    transition:.7s;
+}
+
+.vehicle-card:hover .vehicle-img img{
+    transform:scale(1.07);
+}
+
+.vehicle-info{
+    padding:22px;
+}
+
+.vehicle-info small{
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:9px;
+    font-weight:900;
+}
+
+.vehicle-info h3{
+    margin-top:7px;
+    font-family:Montserrat;
+    font-size:19px;
+}
+
+.vehicle-info p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+    margin-top:10px;
+}
+
+/* ================= REVIEWS ================= */
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.review{
+    padding:28px;
+    border:1px solid var(--line);
+    border-radius:22px;
+    background:linear-gradient(145deg,#111416,#0b0d0e);
+}
+
+.stars{
+    color:var(--accent);
+    letter-spacing:3px;
+}
+
+.review p{
+    color:#b9c0c3;
+    line-height:1.8;
+    font-size:13px;
+    margin:22px 0;
+}
+
+.customer{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.avatar{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#22282b;
+    display:grid;
+    place-items:center;
+    color:var(--accent);
+    font-weight:900;
+}
+
+.customer strong{
+    font-size:12px;
+}
+
+.customer small{
+    display:block;
+    color:#737b7f;
+    margin-top:3px;
+}
+
+/* ================= BOOKING ================= */
+
+.booking{
+    background:
+        linear-gradient(90deg,rgba(230,255,0,.07),transparent 50%),
+        #0b0d0e;
+}
+
+.booking-box{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:50px;
+    padding:55px;
+    border:1px solid var(--line);
+    border-radius:30px;
+    background:rgba(255,255,255,.025);
+}
+
+.booking-copy p{
+    color:var(--muted);
+    line-height:1.8;
+    margin-top:20px;
+}
+
+.contact-mini{
+    margin-top:35px;
+    display:grid;
+    gap:12px;
+}
+
+.contact-mini div{
+    padding:14px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    font-size:12px;
+    color:#b8c0c3;
+}
+
+.contact-mini b{
+    color:var(--accent);
+    margin-right:7px;
+}
+
+.form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:13px;
+}
+
+.form input,
+.form select,
+.form textarea{
+    width:100%;
+    border:1px solid var(--line);
+    background:#090b0c;
+    color:white;
+    padding:15px;
+    border-radius:12px;
+    outline:none;
+    font:inherit;
+    font-size:12px;
+    transition:.25s;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus{
+    border-color:rgba(230,255,0,.55);
+    box-shadow:0 0 0 3px rgba(230,255,0,.05);
+}
+
+.form textarea{
+    min-height:130px;
+    resize:vertical;
+    grid-column:1/-1;
+}
+
+.form button{
+    border:0;
+    cursor:pointer;
+    grid-column:1/-1;
+    justify-content:center;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.contact-card{
+    padding:30px;
+    border:1px solid var(--line);
+    border-radius:22px;
+    background:#0d0f10;
+}
+
+.contact-card h3{
+    font-family:Montserrat;
+    margin-bottom:20px;
+}
+
+.contact-item{
+    display:flex;
+    gap:15px;
+    padding:17px 0;
+    border-bottom:1px solid var(--line);
+}
+
+.contact-item:last-child{
+    border:0;
+}
+
+.contact-item .ci{
+    color:var(--accent);
+    width:28px;
+}
+
+.contact-item strong{
+    font-size:12px;
+}
+
+.contact-item p{
+    color:#838c90;
+    font-size:12px;
+    margin-top:4px;
+    line-height:1.5;
+}
+
+.map-box{
+    min-height:330px;
+    border-radius:22px;
+    border:1px solid var(--line);
+    overflow:hidden;
+    position:relative;
+    background:
+        linear-gradient(135deg,rgba(230,255,0,.05),transparent),
+        repeating-linear-gradient(45deg,#111516 0,#111516 1px,#0b0d0e 1px,#0b0d0e 45px);
+}
+
+.map-pin{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+}
+
+.pin{
+    width:55px;
+    height:55px;
+    margin:auto;
+    display:grid;
+    place-items:center;
+    border-radius:50% 50% 50% 0;
+    transform:rotate(-45deg);
+    background:var(--accent);
+    color:#050606;
+    font-size:22px;
+    box-shadow:0 0 50px rgba(230,255,0,.22);
+}
+
+.pin span{
+    transform:rotate(45deg);
+}
+
+.map-pin p{
+    margin-top:18px;
+    font-size:12px;
+    color:#cdd2d4;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:30px 0;
+    border-top:1px solid var(--line);
+    background:#060708;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.footer p{
+    color:#6e777b;
+    font-size:11px;
+}
+
+.footer-links{
+    display:flex;
+    gap:18px;
+}
+
+.footer-links a{
+    color:#7f888c;
+    font-size:11px;
+}
+
+.footer-links a:hover{
+    color:var(--accent);
+}
+
+/* ================= REVEAL ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:950px){
+    .nav-links,
+    .nav-cta{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav.open .nav-links{
+        display:flex;
+        position:absolute;
+        top:76px;
+        left:3%;
+        right:3%;
+        flex-direction:column;
+        align-items:stretch;
+        padding:12px;
+        border:1px solid var(--line);
+        border-radius:16px;
+        background:rgba(10,12,13,.97);
+        backdrop-filter:blur(20px);
+    }
+
+    .nav.open .nav-links a{
+        padding:14px;
+    }
+
+    .service-grid,
+    .vehicle-grid,
+    .review-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .booking-box{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:680px){
+    section{
+        padding:80px 0;
+    }
+
+    .hero{
+        min-height:850px;
+    }
+
+    .hero h1{
+        letter-spacing:-3px;
+    }
+
+    .hero-bg{
+        background:
+            linear-gradient(90deg,rgba(5,6,7,.92),rgba(5,6,7,.7)),
+            url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80") center/cover;
+    }
+
+    .hero-trust{
+        margin-top:45px;
+        gap:20px;
+    }
+
+    .service-grid,
+    .vehicle-grid,
+    .review-grid,
+    .process-grid,
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-image{
+        min-height:420px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+        gap:25px 0;
+    }
+
+    .stat:nth-child(2){
+        border-right:0;
+    }
+
+    .stat:nth-child(3),
+    .stat:nth-child(4){
+        padding-top:20px;
+    }
+
+    .booking-box{
+        padding:25px;
+    }
+
+    .form{
+        grid-template-columns:1fr;
+    }
+
+    .form textarea,
+    .form button{
+        grid-column:auto;
+    }
+
+    .footer{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header id="header">
+    <nav class="nav" id="nav">
+
+        <a href="#home" class="logo">
+            <div class="logo-mark">UK</div>
+            <div>
+                UK GARAGE
+                <small>SHEFFIELD AUTOMOTIVE</small>
+            </div>
+        </a>
+
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#vehicles">Workshop</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <a href="#booking" class="nav-cta">BOOK SERVICE</a>
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+
+    </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-bg"></div>
+
+    <div class="container">
+        <div class="hero-content reveal">
+
+            <div class="hero-tag">
+                <i></i>
+                Sheffield's Automotive Specialists
+            </div>
+
+            <h1>
+                Your Car.<br>
+                Our <span>Expertise.</span>
+            </h1>
+
+            <div class="type-line">
+                <span id="typewriter"></span><span class="cursor">|</span>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#booking" class="btn btn-primary">
+                    Book Your Service →
+                </a>
+
+                <a href="tel:+447428551185" class="btn btn-outline">
+                    ☎ Call +44 7428 551185
+                </a>
+            </div>
+
+            <div class="hero-trust">
+                <div class="trust-item">
+                    <strong>3+</strong>
+                    <span>Years Experience</span>
+                </div>
+
+                <div class="trust-item">
+                    <strong>1000+</strong>
+                    <span>Cars Serviced</span>
+                </div>
+
+                <div class="trust-item">
+                    <strong>5★</strong>
+                    <span>Customer Care</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+            <div class="eyebrow"><span></span> What We Do</div>
+            <h2>Professional care for every mile.</h2>
+            <p>
+                From routine maintenance to complex diagnostics,
+                our workshop keeps your vehicle performing at its best.
+            </p>
+        </div>
+
+        <div class="service-grid">
+
+            <article class="service-card reveal">
+                <span class="service-number">01</span>
+                <div class="service-icon">⚙</div>
+                <h3>Car Servicing</h3>
+                <p>
+                    Comprehensive servicing designed to maintain
+                    performance, reliability and long-term vehicle health.
+                </p>
+                <a href="#booking" class="service-link">Book Service →</a>
+            </article>
+
+            <article class="service-card reveal">
+                <span class="service-number">02</span>
+                <div class="service-icon">⌁</div>
+                <h3>Diagnostics</h3>
+                <p>
+                    Advanced vehicle diagnostics to quickly identify
+                    warning lights, faults and performance issues.
+                </p>
+                <a href="#booking" class="service-link">Diagnose My Car →</a>
+            </article>
+
+            <article class="service-card reveal">
+                <span class="service-number">03</span>
+                <div class="service-icon">✥</div>
+                <h3>Brake Service</h3>
+                <p>
+                    Inspection, repair and replacement of braking
+                    components for safe and confident driving.
+                </p>
+                <a href="#booking" class="service-link">Book Service →</a>
+            </article>
+
+            <article class="service-card reveal">
+                <span class="service-number">04</span>
+                <div class="service-icon">◈</div>
+                <h3>Engine Repairs</h3>
+                <p>
+                    Professional engine inspection and repair for
+                    smooth, reliable and efficient performance.
+                </p>
+                <a href="#booking" class="service-link">Get Assistance →</a>
+            </article>
+
+            <article class="service-card reveal">
+                <span class="service-number">05</span>
+                <div class="service-icon">◉</div>
+                <h3>MOT Preparation</h3>
+                <p>
+                    Thorough checks to help identify common issues
+                    before your vehicle goes for its MOT.
+                </p>
+                <a href="#booking" class="service-link">Prepare My Car →</a>
+            </article>
+
+            <article class="service-card reveal">
+                <span class="service-number">06</span>
+                <div class="service-icon">↻</div>
+                <h3>Tyres & Alignment</h3>
+                <p>
+                    Tyre checks, replacements and alignment services
+                    designed for safety and better road handling.
+                </p>
+                <a href="#booking" class="service-link">Check Tyres →</a>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-image reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1200&q=85"
+                    alt="Professional automotive workshop"
+                >
+
+                <div class="experience-card">
+                    <strong>UK</strong>
+                    <p>Trusted automotive care in Sheffield</p>
+                </div>
+            </div>
+
+            <div class="about-copy reveal">
+
+                <div class="eyebrow"><span></span> About UK Garage</div>
+
+                <h2>Built around your vehicle.</h2>
+
+                <p>
+                    At UK Garage, we believe professional vehicle care
+                    should be straightforward, honest and dependable.
+                    Our focus is keeping your car safe, reliable and ready
+                    for the road.
+                </p>
+
+                <p>
+                    Whether you need routine maintenance, diagnostics,
+                    repairs or an MOT check, we approach every vehicle
+                    with attention to detail and genuine care.
+                </p>
+
+                <div class="features">
+                    <div class="feature">
+                        <b>✓</b>
+                        <span>Professional service</span>
+                    </div>
+
+                    <div class="feature">
+                        <b>✓</b>
+                        <span>Clear communication</span>
+                    </div>
+
+                    <div class="feature">
+                        <b>✓</b>
+                        <span>Quality-focused repairs</span>
+                    </div>
+
+                    <div class="feature">
+                        <b>✓</b>
+                        <span>Customer-first approach</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <strong class="counter" data-target="1000">0</strong>
+                <p>Vehicles Serviced</p>
+            </div>
+
+            <div class="stat">
+                <strong class="counter" data-target="3">0</strong>
+                <p>Years Experience</p>
+            </div>
+
+            <div class="stat">
+                <strong>5★</strong>
+                <p>Service Standard</p>
+            </div>
+
+            <div class="stat">
+                <strong>24/7</strong>
+                <p>Booking Requests</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-head reveal">
+            <div class="eyebrow"><span></span> Simple Process</div>
+            <h2>From booking to back on the road.</h2>
+        </div>
+
+        <div class="process-grid">
+
+            <div class="process reveal">
+                <span class="process-num">01 / BOOK</span>
+                <h3>Tell us what's wrong</h3>
+                <p>Send us your vehicle details and the service you need.</p>
+            </div>
+
+            <div class="process reveal">
+                <span class="process-num">02 / INSPECT</span>
+                <h3>Vehicle inspection</h3>
+                <p>We assess the vehicle and identify the work required.</p>
+            </div>
+
+            <div class="process reveal">
+                <span class="process-num">03 / REPAIR</span>
+                <h3>Professional work</h3>
+                <p>Our team carries out the required maintenance or repair.</p>
+            </div>
+
+            <div class="process reveal">
+                <span class="process-num">04 / DRIVE</span>
+                <h3>Back on the road</h3>
+                <p>Your vehicle is ready for its next journey.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= VEHICLES ================= -->
+
+<section id="vehicles" class="services">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+            <div class="eyebrow"><span></span> Our Workshop</div>
+            <h2>Care for every kind of driver.</h2>
+            <p>
+                Whether it's your daily commuter, family car or weekend
+                performance vehicle, we provide professional automotive care.
+            </p>
+        </div>
+
+        <div class="vehicle-grid">
+
+            <article class="vehicle-card reveal">
+                <div class="vehicle-img">
+                    <img
+                        src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=85"
+                        alt="Modern vehicle"
+                    >
+                </div>
+                <div class="vehicle-info">
+                    <small>Daily Drivers</small>
+                    <h3>Keep it dependable.</h3>
+                    <p>Routine servicing and maintenance for everyday driving.</p>
+                </div>
+            </article>
+
+            <article class="vehicle-card reveal">
+                <div class="vehicle-img">
+                    <img
+                        src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=85"
+                        alt="Performance vehicle"
+                    >
+                </div>
+                <div class="vehicle-info">
+                    <small>Performance</small>
+                    <h3>Keep it performing.</h3>
+                    <p>Detailed maintenance for drivers who demand more.</p>
+                </div>
+            </article>
+
+            <article class="vehicle-card reveal">
+                <div class="vehicle-img">
+                    <img
+                        src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85"
+                        alt="Premium sports car"
+                    >
+                </div>
+                <div class="vehicle-info">
+                    <small>Premium Vehicles</small>
+                    <h3>Keep it immaculate.</h3>
+                    <p>Professional attention for premium and specialist vehicles.</p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+
+<section id="reviews">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+            <div class="eyebrow"><span></span> Customer Reviews</div>
+            <h2>Drivers who trust their cars with us.</h2>
+        </div>
+
+        <div class="review-grid">
+
+            <article class="review reveal">
+                <div class="stars">★★★★★</div>
+                <p>
+                    “Really professional service from start to finish.
+                    Everything was explained clearly and the car was
+                    running perfectly afterwards.”
+                </p>
+
+                <div class="customer">
+                    <div class="avatar">J</div>
+                    <div>
+                        <strong>James R.</strong>
+                        <small>Sheffield</small>
+                    </div>
+                </div>
+            </article>
+
+            <article class="review reveal">
+                <div class="stars">★★★★★</div>
+                <p>
+                    “Excellent communication and attention to detail.
+                    I would definitely use UK Garage again for future
+                    servicing.”
+                </p>
+
+                <div class="customer">
+                    <div class="avatar">S</div>
+                    <div>
+                        <strong>Sarah M.</strong>
+                        <small>Highfield</small>
+                    </div>
+                </div>
+            </article>
+
+            <article class="review reveal">
+                <div class="stars">★★★★★</div>
+                <p>
+                    “Friendly, straightforward and professional.
+                    They helped identify the problem quickly and kept
+                    me updated throughout.”
+                </p>
+
+                <div class="customer">
+                    <div class="avatar">D</div>
+                    <div>
+                        <strong>Daniel K.</strong>
+                        <small>Sheffield</small>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= BOOKING ================= -->
+
+<section class="booking" id="booking">
+
+    <div class="container">
+
+        <div class="booking-box reveal">
+
+            <div class="booking-copy">
+
+                <div class="eyebrow"><span></span> Book Your Vehicle</div>
+
+                <h2>Let's get your car back on track.</h2>
+
+                <p>
+                    Fill out the form and tell us what your vehicle needs.
+                    We'll use your details to understand your request.
+                </p>
+
+                <div class="contact-mini">
+
+                    <div>
+                        <b>☎</b>
+                        +44 7428 551185
+                    </div>
+
+                    <div>
+                        <b>⌖</b>
+                        5 St Barnabas Ln, Highfield, Sheffield S2 4TG
+                    </div>
+
+                </div>
+
+            </div>
+
+            <form class="form" id="bookingForm">
+
+                <input type="text" placeholder="Your name" required>
+
+                <input type="tel" placeholder="Phone number" required>
+
+                <input type="text" placeholder="Vehicle make & model">
+
+                <input type="text" placeholder="Registration number">
+
+                <select required>
+                    <option value="">Select service</option>
+                    <option>Car Servicing</option>
+                    <option>Diagnostics</option>
+                    <option>Brake Service</option>
+                    <option>Engine Repairs</option>
+                    <option>MOT Preparation</option>
+                    <option>Tyres & Alignment</option>
+                    <option>Other</option>
+                </select>
+
+                <input type="date">
+
+                <textarea placeholder="Tell us about your vehicle or the issue..."></textarea>
+
+                <button class="btn btn-primary" type="submit">
+                    Send Booking Request →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+            <div class="eyebrow"><span></span> Get In Touch</div>
+            <h2>Visit UK Garage.</h2>
+            <p>
+                Located in Highfield, Sheffield. Contact us to discuss
+                your vehicle service or repair.
+            </p>
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-card reveal">
+
+                <h3>Contact Details</h3>
+
+                <div class="contact-item">
+                    <div class="ci">⌖</div>
+                    <div>
+                        <strong>Workshop Address</strong>
+                        <p>
+                            5 St Barnabas Ln,<br>
+                            Highfield, Sheffield S2 4TG,<br>
+                            United Kingdom
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="ci">☎</div>
+                    <div>
+                        <strong>Phone</strong>
+                        <p>
+                            <a href="tel:+447428551185">
+                                +44 7428 551185
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="ci">✓</div>
+                    <div>
+                        <strong>Service Area</strong>
+                        <p>Highfield & Sheffield</p>
+                    </div>
+                </div>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=5%20St%20Barnabas%20Ln%2C%20Highfield%2C%20Sheffield%20S2%204TG"
+                    target="_blank"
+                    class="btn btn-primary"
+                    style="margin-top:20px;"
+                >
+                    Get Directions →
+                </a>
+
+            </div>
+
+            <div class="map-box reveal">
+
+                <div class="map-pin">
+                    <div class="pin">
+                        <span>⌖</span>
+                    </div>
+                    <p>UK Garage · Sheffield</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container footer">
+
+        <div>
+            <a href="#home" class="logo">
+                <div class="logo-mark">UK</div>
+                <div>
+                    UK GARAGE
+                    <small>SHEFFIELD AUTOMOTIVE</small>
+                </div>
+            </a>
+
+            <p style="margin-top:10px;">
+                © <span id="year"></span> UK Garage. All rights reserved.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#booking">Booking</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+
+/* ================= NAVBAR ================= */
+
+const header = document.getElementById("header");
+const nav = document.getElementById("nav");
+const menuBtn = document.getElementById("menuBtn");
+
+window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+});
+
+menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("open");
+    menuBtn.textContent = nav.classList.contains("open") ? "×" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        menuBtn.textContent = "☰";
+    });
+});
+
+
+/* ================= TYPEWRITER ================= */
+
+const typeElement = document.getElementById("typewriter");
+
+const phrases = [
+    "Professional servicing. Honest advice.",
+    "Diagnostics. Repairs. Maintenance.",
+    "Keeping Sheffield moving.",
+    "Your vehicle deserves better care."
+];
+
+let phraseIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeWriter(){
+
+    const current = phrases[phraseIndex];
+
+    if(!deleting){
+        typeElement.textContent = current.substring(0,charIndex + 1);
+        charIndex++;
+
+        if(charIndex === current.length){
+            deleting = true;
+            setTimeout(typeWriter,1800);
+            return;
+        }
+
+    }else{
+
+        typeElement.textContent = current.substring(0,charIndex - 1);
+        charIndex--;
+
+        if(charIndex === 0){
+            deleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+        }
+    }
+
+    setTimeout(typeWriter, deleting ? 45 : 75);
+}
+
+typeWriter();
+
+
+/* ================= SCROLL REVEAL ================= */
+
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+            revealObserver.unobserve(entry.target);
+        }
+
+    });
+
+},{
+    threshold:.12
+});
+
+document.querySelectorAll(".reveal").forEach(el => {
+    revealObserver.observe(el);
+});
+
+
+/* ================= COUNTERS ================= */
+
+const counterObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(!entry.isIntersecting) return;
+
+        const counter = entry.target;
+        const target = Number(counter.dataset.target);
+
+        let current = 0;
+        const duration = 1300;
+        const start = performance.now();
+
+        function animate(time){
+
+            const progress = Math.min((time - start) / duration,1);
+            current = Math.floor(progress * target);
+
+            counter.textContent =
+                target >= 1000
+                ? current.toLocaleString() + "+"
+                : current + "+";
+
+            if(progress < 1){
+                requestAnimationFrame(animate);
+            }
+
+        }
+
+        requestAnimationFrame(animate);
+        counterObserver.unobserve(counter);
+
+    });
+
+},{
+    threshold:.7
+});
+
+document.querySelectorAll(".counter").forEach(counter => {
+    counterObserver.observe(counter);
+});
+
+
+/* ================= BOOKING FORM ================= */
+
+const bookingForm = document.getElementById("bookingForm");
+
+bookingForm.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const button = bookingForm.querySelector("button");
+
+    button.textContent = "✓ Request Received";
+    button.style.background = "#ffffff";
+
+    setTimeout(() => {
+
+        button.textContent = "Send Booking Request →";
+        button.style.background = "";
+
+        bookingForm.reset();
+
+    },3000);
+
+});
+
+
+/* ================= ACTIVE NAV ================= */
+
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 160;
+
+        if(window.scrollY >= sectionTop){
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current){
+            link.classList.add("active");
+        }
+
+    });
+
+});
+
+
+/* ================= YEAR ================= */
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
+/* ================= BUTTON RIPPLE ================= */
+
+document.querySelectorAll(".btn").forEach(button => {
+
+    button.addEventListener("click", function(e){
+
+        const ripple = document.createElement("span");
+
+        ripple.style.position = "absolute";
+        ripple.style.width = "10px";
+        ripple.style.height = "10px";
+        ripple.style.borderRadius = "50%";
+        ripple.style.background = "rgba(255,255,255,.35)";
+        ripple.style.transform = "scale(0)";
+        ripple.style.animation = "ripple .6s linear";
+        ripple.style.pointerEvents = "none";
+
+        const rect = button.getBoundingClientRect();
+
+        ripple.style.left = (e.clientX - rect.left) + "px";
+        ripple.style.top = (e.clientY - rect.top) + "px";
+
+        button.style.position = "relative";
+        button.style.overflow = "hidden";
+
+        button.appendChild(ripple);
+
+        setTimeout(() => ripple.remove(),600);
+
+    });
+
+});
+
+const rippleStyle = document.createElement("style");
+
+rippleStyle.textContent = `
+@keyframes ripple{
+    to{
+        transform:scale(25);
+        opacity:0;
+    }
+}`;
+
+document.head.appendChild(rippleStyle);
+
+</script>
+
+</body>
+</html>
